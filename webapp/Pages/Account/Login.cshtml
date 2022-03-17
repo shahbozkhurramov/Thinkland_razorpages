@@ -1,0 +1,26 @@
+@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Login page";
+}
+
+<div class="container">
+    <div class="signup-content">
+        <form method="post">
+            <h2 class="form-title text-primary" diabled>Login to your account</h2>
+            <div class="form-group">
+                <input type="text" asp-for="LoginViewModel.UserName" class="form-input" id="name" placeholder="Your Username"/>
+            </div>
+            <div class="form-group">
+                <input type="password" asp-for="LoginViewModel.Password" class="form-input" id="password" placeholder="Password"/>
+                <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" id="submit" class="form-submit" value="Login"/>
+            </div>
+        </form>
+        <p class="loginhere">
+            Do not have an account ? <a asp-page="/Account/Register" class="loginhere-link">Register here</a>
+        </p>
+    </div>
+</div>

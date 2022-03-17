@@ -1,0 +1,28 @@
+@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register page";
+}
+<div class="container">
+    <div class="signup-content">
+        <form method="post" id="signup-form" class="signup-form">
+            <h2 class="form-title text-primary" diabled>Create account</h2>
+            <div class="form-group">
+                <input type="text" asp-for="RegisterViewModel.UserName" class="form-input" id="name" placeholder="Your Username"/>
+            </div>
+            <div class="form-group">
+                <input type="email" asp-for="RegisterViewModel.Email" class="form-input" id="email" placeholder="Your Email"/>
+            </div>
+            <div class="form-group">
+                <input type="password" asp-for="RegisterViewModel.Password" class="form-input" id="password" placeholder="Password"/>
+                <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" name="submit" id="submit" class="form-submit" value="Register"/>
+            </div>
+        </form>
+        <p class="loginhere">
+            Have already an account ? <a asp-page="/Account/Login" class="loginhere-link">Login here</a>
+        </p>
+    </div>
+</div>
